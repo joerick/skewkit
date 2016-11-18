@@ -1,0 +1,82 @@
+/*
+ * Base styles
+ */
+ .skew {
+  position: relative;
+}
+.skew-content {
+  padding: 2.6vw 0;
+}
+.skew-outline {
+  overflow: hidden;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.skew-background {
+  position: absolute;
+  top: -2.6vw;
+  left: 0;
+  bottom: -2.6vw;
+  right: 0;
+  background-position: center;
+  background-size: cover;
+}
+.skew-half-spacer {
+  height: 2.6vw;
+}
+
+/*
+ * Left/right variants
+ */
+ .skew.left .skew-outline {
+  transform: skewY(3deg);
+}
+.skew.left .skew-background {
+  transform: skewY(-3deg);
+}
+.skew.right .skew-outline {
+  transform: skewY(-3deg);
+}
+.skew.right .skew-background {
+  transform: skewY(3deg);
+}
+
+/*
+ * Straight top/bottom
+ */
+ .skew.flat-top .skew {
+  overflow: hidden;
+}
+.skew.flat-top .skew-content {
+  padding-top: 0;
+}
+.skew.flat-top .skew-outline {
+  top: -2.6vw;
+}
+.skew.flat-top .skew-background {
+  top: 2.6vw;
+}
+.skew.flat-bottom .skew {
+  overflow: hidden;
+}
+.skew.flat-bottom .skew-content {
+  padding-bottom: 0;
+}
+.skew.flat-bottom .skew-outline {
+  bottom: -2.6vw;
+}
+.skew.flat-bottom .skew-background {
+  bottom: 2.6vw;
+}
+/*
+ * Wedge
+ * Wedges should be preceded with opaque content so that their tops are not visible
+ */
+ .skew.wedge .skew-outline {
+  top: calc(-2.6vw * 2);
+  z-index: -2;
+}
