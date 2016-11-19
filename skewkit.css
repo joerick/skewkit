@@ -80,3 +80,6 @@
   top: calc(-2.6vw * 2);
   z-index: -2;
 }
+ .skew.wedge .skew-background {
+  top: 2.6vw;
+}
